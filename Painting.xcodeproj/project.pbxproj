@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F802A45E1D91D8C400E087FB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F802A45D1D91D8C400E087FB /* ViewModel.swift */; };
 		F88583A71D90D2DE00A960B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88583A61D90D2DE00A960B7 /* AppDelegate.swift */; };
 		F88583A91D90D2DE00A960B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88583A81D90D2DE00A960B7 /* ViewController.swift */; };
 		F88583AC1D90D2DE00A960B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F88583AA1D90D2DE00A960B7 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F802A45D1D91D8C400E087FB /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModel.swift; path = ../ViewModel.swift; sourceTree = "<group>"; };
 		F88583A31D90D2DE00A960B7 /* Painting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Painting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88583A61D90D2DE00A960B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F88583A81D90D2DE00A960B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		F88583A51D90D2DE00A960B7 /* Painting */ = {
 			isa = PBXGroup;
 			children = (
+				F802A45D1D91D8C400E087FB /* ViewModel.swift */,
 				F88583A61D90D2DE00A960B7 /* AppDelegate.swift */,
 				F88583A81D90D2DE00A960B7 /* ViewController.swift */,
 				F88583AA1D90D2DE00A960B7 /* Main.storyboard */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F88583A91D90D2DE00A960B7 /* ViewController.swift in Sources */,
+				F802A45E1D91D8C400E087FB /* ViewModel.swift in Sources */,
 				F88583A71D90D2DE00A960B7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +518,7 @@
 				F88583CD1D90D2DE00A960B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F88583CE1D90D2DE00A960B7 /* Build configuration list for PBXNativeTarget "PaintingTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				F88583D01D90D2DE00A960B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F88583D11D90D2DE00A960B7 /* Build configuration list for PBXNativeTarget "PaintingUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +536,7 @@
 				F88583D31D90D2DE00A960B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

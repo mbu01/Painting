@@ -9,17 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    var lastPoint = CGPoint.zero
-    var red: CGFloat = 0.0
-    var green: CGFloat = 0.0
-    var blue: CGFloat = 0.0
-    var brushWidth: CGFloat = 10.0
-    var opacity: CGFloat = 1.0
-    var swiped = false
-    var count_size = 0
-
     
+    let viewModel = ViewModel()
     
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
@@ -32,15 +23,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         sliderBrush.isHidden = true
         labelBrush.isHidden = true
         titleBrush.isHidden = true
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Actions
@@ -56,8 +42,8 @@ class ViewController: UIViewController {
   
     
     @IBAction func sizePressed(_ sender: AnyObject) {
-        count_size += 1
-        if count_size % 2 == 1 {
+        
+        if sliderBrush.isHidden == true {
             sliderBrush.isHidden = false
             labelBrush.isHidden = false
             titleBrush.isHidden = false
@@ -75,19 +61,16 @@ class ViewController: UIViewController {
     
     @IBAction func sliderChanged(_ sender: UISlider) {
         if sender == sliderBrush {
-            brushWidth = CGFloat(sender.value)
-            labelBrush.text = NSString(format: "%.2f", brushWidth.native) as String
+            viewModel.brushsliderChanged(brush: CGFloat(sender.value))
+            labelBrush.text = NSString(format: "%.2f", viewModel.getBrushWidth().native) as String
         }
-        
-        //drawPreview()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        swiped = false
+        viewModel.setSwiped(swipe: false)
         if let touch = touches.first {
-            lastPoint = touch.location(in: self.view)
+            viewModel.setLastPoint(last: touch.location(in: self.view))
         }
-        super.touchesBegan(touches, with: event)
     }
     
     func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
@@ -100,43 +83,39 @@ class ViewController: UIViewController {
         context!.addLine(to: toPoint)
         
         context!.setLineCap(CGLineCap.round)
-        context!.setLineWidth(brushWidth)
-        context!.setStrokeColor(red: red, green: green, blue: blue, alpha: 1.0)
+        context!.setLineWidth(viewModel.getBrushWidth())
+        context!.setStrokeColor(red: viewModel.getColor(color: "red"), green: viewModel.getColor(color: "green"), blue: viewModel.getColor(color: "blue"), alpha: 1.0)
         context!.setBlendMode(CGBlendMode.normal)
         
         context!.strokePath()
         
         tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
-        tempImageView.alpha = opacity
+        tempImageView.alpha = viewModel.getOpacity()
         UIGraphicsEndImageContext()
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //6
-        swiped = true
+       
+        viewModel.setSwiped(swipe: true)
         if let touch = touches.first{
             let currentPoint = touch.location(in: view)
-            drawLineFrom(fromPoint: lastPoint, toPoint: currentPoint)
-            lastPoint = currentPoint
+            drawLineFrom(fromPoint: viewModel.getLastPoint(), toPoint: currentPoint)
+            viewModel.setLastPoint(last: currentPoint)
         }
-        super.touchesMoved(touches, with: event)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !swiped {
-            // draw a point
-            drawLineFrom(fromPoint: lastPoint, toPoint: lastPoint)
+        if !viewModel.isSwiped() {
+            drawLineFrom(fromPoint: viewModel.getLastPoint(), toPoint: viewModel.getLastPoint())
         }
-        
-        // merge tempImageView into mainImageView
+
         mergeView()
-        super.touchesEnded(touches, with: event)
     }
     
     func mergeView() {
         UIGraphicsBeginImageContext(mainImageView.frame.size)
         mainImageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.normal, alpha: 1.0)
-        tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.normal, alpha: opacity)
+        tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.normal, alpha: viewModel.getOpacity())
         mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
