@@ -25,7 +25,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYC-qK-CfB" userLabel="TempImageView">
                                 <frame key="frameInset" width="600" height="600"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1c-ng-POr">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1c-ng-POr" userLabel="Color Button">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="b5x-ss-4ht"/>
                                     <constraint firstAttribute="height" constant="48" id="vbl-lG-wHQ"/>
@@ -45,17 +45,7 @@
                                     <action selector="sizePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D5V-IO-sSm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rh-Ko-LWE">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="hT7-Iy-A0Z"/>
-                                    <constraint firstAttribute="height" constant="48" id="htE-QB-DAU"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="eraser-2"/>
-                                <connections>
-                                    <action selector="eraserPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="get-g9-w9s"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJc-zC-40h">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJc-zC-40h" userLabel="Reset Button">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="Kwe-ed-DyC"/>
                                     <constraint firstAttribute="height" constant="48" id="ho9-9Y-45n"/>
@@ -92,6 +82,76 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKM-Je-ugM" userLabel="Save">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="JkU-tq-3P7"/>
+                                    <constraint firstAttribute="height" constant="48" id="XMd-5l-FZf"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ic_file_download_48pt"/>
+                                <connections>
+                                    <action selector="share:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eMq-ct-TO5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Co6-vY-ezg" userLabel="Color1">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="9Bg-CI-hMV"/>
+                                    <constraint firstAttribute="height" constant="48" id="Smm-Wl-liX"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ic_lens_48pt"/>
+                                <connections>
+                                    <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dKK-Sb-aDp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uU5-a2-ALr" userLabel="Color2">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="d6k-ez-VKE"/>
+                                    <constraint firstAttribute="width" constant="48" id="w3z-UB-zQz"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ic_lens_48pt"/>
+                                <connections>
+                                    <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oDp-gP-064"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgR-id-whc" userLabel="Color3">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="TyB-Cv-zju"/>
+                                    <constraint firstAttribute="height" constant="48" id="of7-DK-9hZ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ic_lens_48pt"/>
+                                <connections>
+                                    <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MFL-FM-uoi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QU-Zm-h3Z" userLabel="Color4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="c03-RT-MHG"/>
+                                    <constraint firstAttribute="width" constant="48" id="y7h-s7-p3Q"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ic_lens_48pt"/>
+                                <connections>
+                                    <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2X9-mx-oEk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2p-t9-lrO" userLabel="Color5">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="kbs-YO-cIL"/>
+                                    <constraint firstAttribute="height" constant="48" id="yN8-to-W48"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ic_lens_48pt"/>
+                                <connections>
+                                    <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gXY-JV-3Ti"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rh-Ko-LWE" userLabel="Eraser Button">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="hT7-Iy-A0Z"/>
+                                    <constraint firstAttribute="height" constant="48" id="htE-QB-DAU"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="eraser-2"/>
+                                <connections>
+                                    <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hsY-Gi-Zvt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -102,26 +162,44 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Rh-Ko-LWE" secondAttribute="bottom" constant="67" id="5DD-9V-kAm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QYC-qK-CfB" secondAttribute="trailing" constant="-16" id="5e5-bw-3y7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="u1c-ng-POr" secondAttribute="bottom" constant="67" id="8yV-Sa-cZy"/>
+                            <constraint firstItem="xgR-id-whc" firstAttribute="centerX" secondItem="6QU-Zm-h3Z" secondAttribute="centerX" id="9aM-b6-9wD"/>
+                            <constraint firstItem="uU5-a2-ALr" firstAttribute="centerX" secondItem="xgR-id-whc" secondAttribute="centerX" id="9cr-lO-nTa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QYC-qK-CfB" secondAttribute="bottom" id="Bwj-Mf-bxk"/>
                             <constraint firstItem="SJc-zC-40h" firstAttribute="top" secondItem="TCU-Nu-fSe" secondAttribute="bottom" constant="23" id="C31-Yv-pmo"/>
+                            <constraint firstItem="hKM-Je-ugM" firstAttribute="centerX" secondItem="SJc-zC-40h" secondAttribute="centerX" id="E9B-21-vqA"/>
                             <constraint firstItem="9tb-SW-0eW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="70" id="Esm-vI-KPF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9tb-SW-0eW" secondAttribute="trailing" constant="77" id="HAa-ur-Ac9"/>
                             <constraint firstItem="SJc-zC-40h" firstAttribute="leading" secondItem="7Rh-Ko-LWE" secondAttribute="trailing" constant="16" id="HMe-iV-FO2"/>
+                            <constraint firstItem="QYC-qK-CfB" firstAttribute="top" secondItem="hKM-Je-ugM" secondAttribute="bottom" constant="-107" id="OQG-qx-v0k"/>
+                            <constraint firstItem="Z2p-t9-lrO" firstAttribute="top" secondItem="6QU-Zm-h3Z" secondAttribute="bottom" constant="30" id="QDX-xB-5ag"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MFJ-ds-W7G" secondAttribute="bottom" constant="67" id="TDN-UM-OPJ"/>
                             <constraint firstItem="QYC-qK-CfB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="XbG-8J-9al"/>
                             <constraint firstItem="MFJ-ds-W7G" firstAttribute="leading" secondItem="u1c-ng-POr" secondAttribute="trailing" constant="36" id="ZQD-Lq-FiA"/>
+                            <constraint firstItem="Co6-vY-ezg" firstAttribute="centerX" secondItem="u1c-ng-POr" secondAttribute="centerX" id="aBT-mT-N8u"/>
+                            <constraint firstItem="u1c-ng-POr" firstAttribute="top" secondItem="Z2p-t9-lrO" secondAttribute="bottom" constant="30" id="ak3-dS-TQS"/>
                             <constraint firstItem="MmX-ed-CGp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="dHW-tH-SIX"/>
                             <constraint firstItem="9tb-SW-0eW" firstAttribute="leading" secondItem="9kN-dO-3wh" secondAttribute="trailing" constant="25" id="fK3-h1-aS4"/>
+                            <constraint firstItem="6QU-Zm-h3Z" firstAttribute="top" secondItem="xgR-id-whc" secondAttribute="bottom" constant="30" id="g8e-zR-Tc9"/>
                             <constraint firstItem="MmX-ed-CGp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="k0e-Zc-cm8"/>
+                            <constraint firstItem="xgR-id-whc" firstAttribute="top" secondItem="uU5-a2-ALr" secondAttribute="bottom" constant="30" id="kT3-Yw-M5j"/>
                             <constraint firstItem="9tb-SW-0eW" firstAttribute="leading" secondItem="MFJ-ds-W7G" secondAttribute="trailing" constant="-81" id="lol-0D-3R4"/>
                             <constraint firstItem="MFJ-ds-W7G" firstAttribute="top" secondItem="9tb-SW-0eW" secondAttribute="bottom" constant="23" id="nZz-S6-bg1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MmX-ed-CGp" secondAttribute="trailing" constant="-16" id="oC0-OV-TWG"/>
                             <constraint firstItem="TCU-Nu-fSe" firstAttribute="leading" secondItem="9tb-SW-0eW" secondAttribute="trailing" constant="8" id="rJz-c4-KZT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SJc-zC-40h" secondAttribute="trailing" constant="7" id="sp5-q6-hAh"/>
+                            <constraint firstItem="6QU-Zm-h3Z" firstAttribute="centerX" secondItem="Z2p-t9-lrO" secondAttribute="centerX" id="uQg-rP-MlU"/>
+                            <constraint firstItem="uU5-a2-ALr" firstAttribute="top" secondItem="Co6-vY-ezg" secondAttribute="bottom" constant="30" id="wT0-lD-kPz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MmX-ed-CGp" secondAttribute="bottom" id="xtG-RB-Xqs"/>
+                            <constraint firstItem="Co6-vY-ezg" firstAttribute="centerX" secondItem="uU5-a2-ALr" secondAttribute="centerX" id="ybY-nt-Od0"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="colorButton1" destination="Co6-vY-ezg" id="vwS-gd-Bsg"/>
+                        <outlet property="colorButton2" destination="uU5-a2-ALr" id="8Kc-4T-e9Z"/>
+                        <outlet property="colorButton3" destination="xgR-id-whc" id="GXZ-4e-9K2"/>
+                        <outlet property="colorButton4" destination="6QU-Zm-h3Z" id="6xS-yU-gRf"/>
+                        <outlet property="colorButton5" destination="Z2p-t9-lrO" id="Lgy-bv-LSz"/>
+                        <outlet property="eraseButton" destination="7Rh-Ko-LWE" id="PKy-3h-geI"/>
                         <outlet property="labelBrush" destination="TCU-Nu-fSe" id="cOt-D6-qkt"/>
                         <outlet property="mainImageView" destination="MmX-ed-CGp" id="NES-Hf-IRH"/>
                         <outlet property="sizeButton" destination="MFJ-ds-W7G" id="hAF-aA-XBH"/>
@@ -140,5 +218,7 @@
         <image name="clearIcon" width="100" height="100"/>
         <image name="colorIcon" width="100" height="100"/>
         <image name="eraser-2" width="606" height="244"/>
+        <image name="ic_file_download_48pt" width="48" height="48"/>
+        <image name="ic_lens_48pt" width="48" height="48"/>
     </resources>
 </document>

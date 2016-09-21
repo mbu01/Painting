@@ -24,14 +24,6 @@ class ViewModel {
     func getBrushWidth() -> CGFloat {
         return brushWidth
     }
-
-    func setLastPoint(last: CGPoint) {
-        lastPoint = last
-    }
-    
-    func getLastPoint() -> CGPoint {
-        return lastPoint
-    }
     
     func brushsliderChanged(brush: CGFloat) {
         brushWidth = brush
@@ -40,6 +32,13 @@ class ViewModel {
     func reset() {
         mainImage = nil
         tempImage = nil
+    }
+    
+    func colorSelect(color: (CGFloat, CGFloat, CGFloat)) {
+        (red, green, blue) = color
+        print(red)
+        print(green)
+        print(blue)
     }
     
     func touchesBegin(firstTouch: Bool, touchPoint: CGPoint) {

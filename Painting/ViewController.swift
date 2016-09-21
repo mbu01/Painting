@@ -12,6 +12,15 @@ final class ViewController: UIViewController {
     
     let viewModel = ViewModel()
     
+    let colors: [(CGFloat, CGFloat, CGFloat)] = [
+        (0, 0, 0),
+        (105.0 / 255.0, 105.0 / 255.0, 105.0 / 255.0),
+        (1.0, 0, 0),
+        (0, 0, 1.0),
+        (1.0, 1.0, 0),
+        (1.0, 1.0, 1.0),
+        ]
+    
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
     
@@ -21,25 +30,86 @@ final class ViewController: UIViewController {
 
     @IBOutlet weak var sizeButton: UIButton!
     
+    @IBOutlet weak var colorButton1: UIButton!
+    @IBOutlet weak var colorButton2: UIButton!
+    @IBOutlet weak var colorButton3: UIButton!
+    @IBOutlet weak var colorButton4: UIButton!
+    @IBOutlet weak var colorButton5: UIButton!
+    @IBOutlet weak var eraseButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         sliderBrush.isHidden = true
         labelBrush.isHidden = true
         titleBrush.isHidden = true
+        colorButton1.isHidden = true
+        colorButton2.isHidden = true
+        colorButton3.isHidden = true
+        colorButton4.isHidden = true
+        colorButton5.isHidden = true
     }
 
     // MARK: - Actions
+    
     
     @IBAction func reset(_ sender: AnyObject) {
         viewModel.reset()
         reloadView()
     }
   
+    @IBAction func share(_ sender: AnyObject) {
+        let image = viewModel.getMainImage()
+        let activity = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        present(activity, animated: true, completion: nil)
+    }
     
     @IBAction func colorPressed(_ sender: AnyObject) {
+        if colorButton1.isHidden == true {
+            colorButton1.isHidden = false
+            colorButton2.isHidden = false
+            colorButton3.isHidden = false
+            colorButton4.isHidden = false
+            colorButton5.isHidden = false
+        } else {
+            colorButton1.isHidden = true
+            colorButton2.isHidden = true
+            colorButton3.isHidden = true
+            colorButton4.isHidden = true
+            colorButton5.isHidden = true
+        }
     }
   
+    @IBAction func colorSelected(_ sender: AnyObject) {
+        var index = sender.tag ?? 0
+        if index < 0 || index >= colors.count {
+            index = 0
+        }
+        if sender as! NSObject == colorButton1 {
+            index = 0
+        }
+        if sender as! NSObject == colorButton2 {
+            index = 1
+        }
+        if sender as! NSObject == colorButton3 {
+            index = 2
+        }
+        if sender as! NSObject == colorButton4 {
+            index = 3
+        }
+        if sender as! NSObject == colorButton5 {
+            index = 4
+        }
+        if sender as! NSObject == eraseButton {
+            index = 5
+        }
+        let color = colors[index]
+        print(index)
+        
+        viewModel.colorSelect(color: color)
+
+    }
+    
     
     @IBAction func sizePressed(_ sender: AnyObject) {
         
@@ -53,11 +123,6 @@ final class ViewController: UIViewController {
             titleBrush.isHidden = true
         }
     }
-    
-    
-    @IBAction func eraserPressed(_ sender: AnyObject) {
-    }
-  
     
     @IBAction func sliderChanged(_ sender: UISlider) {
         if sender == sliderBrush {
