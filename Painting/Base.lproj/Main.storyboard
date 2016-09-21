@@ -102,7 +102,7 @@
                                     <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dKK-Sb-aDp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uU5-a2-ALr" userLabel="Color2">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uU5-a2-ALr" userLabel="Color2">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="d6k-ez-VKE"/>
                                     <constraint firstAttribute="width" constant="48" id="w3z-UB-zQz"/>
@@ -112,7 +112,7 @@
                                     <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oDp-gP-064"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgR-id-whc" userLabel="Color3">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgR-id-whc" userLabel="Color3">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="TyB-Cv-zju"/>
                                     <constraint firstAttribute="height" constant="48" id="of7-DK-9hZ"/>
@@ -122,7 +122,7 @@
                                     <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MFL-FM-uoi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QU-Zm-h3Z" userLabel="Color4">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QU-Zm-h3Z" userLabel="Color4">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="c03-RT-MHG"/>
                                     <constraint firstAttribute="width" constant="48" id="y7h-s7-p3Q"/>
@@ -132,7 +132,7 @@
                                     <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2X9-mx-oEk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2p-t9-lrO" userLabel="Color5">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2p-t9-lrO" userLabel="Color5">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="kbs-YO-cIL"/>
                                     <constraint firstAttribute="height" constant="48" id="yN8-to-W48"/>
@@ -142,7 +142,7 @@
                                     <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gXY-JV-3Ti"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rh-Ko-LWE" userLabel="Eraser Button">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rh-Ko-LWE" userLabel="Eraser Button">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="hT7-Iy-A0Z"/>
                                     <constraint firstAttribute="height" constant="48" id="htE-QB-DAU"/>

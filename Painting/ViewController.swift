@@ -85,27 +85,7 @@ final class ViewController: UIViewController {
         if index < 0 || index >= colors.count {
             index = 0
         }
-        if sender as! NSObject == colorButton1 {
-            index = 0
-        }
-        if sender as! NSObject == colorButton2 {
-            index = 1
-        }
-        if sender as! NSObject == colorButton3 {
-            index = 2
-        }
-        if sender as! NSObject == colorButton4 {
-            index = 3
-        }
-        if sender as! NSObject == colorButton5 {
-            index = 4
-        }
-        if sender as! NSObject == eraseButton {
-            index = 5
-        }
         let color = colors[index]
-        print(index)
-        
         viewModel.colorSelect(color: color)
 
     }
