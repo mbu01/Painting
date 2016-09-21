@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     let viewModel = ViewModel()
     
@@ -31,9 +31,9 @@ class ViewController: UIViewController {
 
     // MARK: - Actions
     
-    
     @IBAction func reset(_ sender: AnyObject) {
-        mainImageView.image = nil
+        viewModel.reset()
+        reloadView()
     }
   
     
@@ -67,61 +67,34 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        viewModel.setSwiped(swipe: false)
+        
         if let touch = touches.first {
-            viewModel.setLastPoint(last: touch.location(in: self.view))
+            viewModel.touchesBegin(firstTouch: true, touchPoint: touch.location(in: self.view))
+        } else {
+            viewModel.touchesBegin(firstTouch: false, touchPoint: CGPoint.zero)
         }
-    }
-    
-    func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
 
-        UIGraphicsBeginImageContext(view.frame.size)
-        let context = UIGraphicsGetCurrentContext()
-        tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
-        
-        context!.move(to: fromPoint)
-        context!.addLine(to: toPoint)
-        
-        context!.setLineCap(CGLineCap.round)
-        context!.setLineWidth(viewModel.getBrushWidth())
-        context!.setStrokeColor(red: viewModel.getColor(color: "red"), green: viewModel.getColor(color: "green"), blue: viewModel.getColor(color: "blue"), alpha: 1.0)
-        context!.setBlendMode(CGBlendMode.normal)
-        
-        context!.strokePath()
-        
-        tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
-        tempImageView.alpha = viewModel.getOpacity()
-        UIGraphicsEndImageContext()
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-       
-        viewModel.setSwiped(swipe: true)
+
         if let touch = touches.first{
-            let currentPoint = touch.location(in: view)
-            drawLineFrom(fromPoint: viewModel.getLastPoint(), toPoint: currentPoint)
-            viewModel.setLastPoint(last: currentPoint)
+            viewModel.touchesMove(firstTouch: true, touchPoint: touch.location(in: view), tempImageSize: tempImageView.frame.size)
+            
+        } else {
+            viewModel.touchesMove(firstTouch: false, touchPoint: CGPoint.zero, tempImageSize: tempImageView.frame.size)
         }
+        reloadView()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !viewModel.isSwiped() {
-            drawLineFrom(fromPoint: viewModel.getLastPoint(), toPoint: viewModel.getLastPoint())
-        }
-
-        mergeView()
-    }
-    
-    func mergeView() {
-        UIGraphicsBeginImageContext(mainImageView.frame.size)
-        mainImageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.normal, alpha: 1.0)
-        tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.normal, alpha: viewModel.getOpacity())
-        mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        tempImageView.image = nil
+        viewModel.touchesEnd(tempFrameSize: tempImageView.frame.size, mainFrameSize: mainImageView.frame.size)
+        reloadView()
     }
 
-
+    func reloadView() {
+        tempImageView.image = viewModel.getTempImage()
+        mainImageView.image = viewModel.getMainImage()
+    }
 }
 
