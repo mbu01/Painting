@@ -14,10 +14,10 @@ final class ViewController: UIViewController {
     
     let colors: [(CGFloat, CGFloat, CGFloat)] = [
         (0, 0, 0),
-        (105.0 / 255.0, 105.0 / 255.0, 105.0 / 255.0),
-        (1.0, 0, 0),
-        (0, 0, 1.0),
-        (1.0, 1.0, 0),
+        (216.0 / 255.0, 0, 39.0 / 255.0),
+        (255.0 / 255.0, 218.0 / 255.0, 68.0 / 255.0),
+        (0, 109.0 / 255.0, 240.0 / 255.0),
+        (145.0 / 255.0, 220.0 / 255.0, 90.0 / 255.0),
         (1.0, 1.0, 1.0),
         ]
     
@@ -36,6 +36,7 @@ final class ViewController: UIViewController {
     @IBOutlet weak var colorButton4: UIButton!
     @IBOutlet weak var colorButton5: UIButton!
     @IBOutlet weak var eraseButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

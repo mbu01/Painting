@@ -97,7 +97,7 @@
                                     <constraint firstAttribute="width" constant="48" id="9Bg-CI-hMV"/>
                                     <constraint firstAttribute="height" constant="48" id="Smm-Wl-liX"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="ic_lens_48pt"/>
+                                <state key="normal" backgroundImage="circle-black"/>
                                 <connections>
                                     <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dKK-Sb-aDp"/>
                                 </connections>
@@ -107,7 +107,7 @@
                                     <constraint firstAttribute="height" constant="48" id="d6k-ez-VKE"/>
                                     <constraint firstAttribute="width" constant="48" id="w3z-UB-zQz"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="ic_lens_48pt"/>
+                                <state key="normal" backgroundImage="circle-red"/>
                                 <connections>
                                     <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oDp-gP-064"/>
                                 </connections>
@@ -117,7 +117,7 @@
                                     <constraint firstAttribute="width" constant="48" id="TyB-Cv-zju"/>
                                     <constraint firstAttribute="height" constant="48" id="of7-DK-9hZ"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="ic_lens_48pt"/>
+                                <state key="normal" backgroundImage="circle-yellow"/>
                                 <connections>
                                     <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MFL-FM-uoi"/>
                                 </connections>
@@ -127,7 +127,7 @@
                                     <constraint firstAttribute="height" constant="48" id="c03-RT-MHG"/>
                                     <constraint firstAttribute="width" constant="48" id="y7h-s7-p3Q"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="ic_lens_48pt"/>
+                                <state key="normal" backgroundImage="circle-blue"/>
                                 <connections>
                                     <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2X9-mx-oEk"/>
                                 </connections>
@@ -137,7 +137,7 @@
                                     <constraint firstAttribute="width" constant="48" id="kbs-YO-cIL"/>
                                     <constraint firstAttribute="height" constant="48" id="yN8-to-W48"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="ic_lens_48pt"/>
+                                <state key="normal" backgroundImage="circle-green"/>
                                 <connections>
                                     <action selector="colorSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gXY-JV-3Ti"/>
                                 </connections>
@@ -215,10 +215,14 @@
     </scenes>
     <resources>
         <image name="brushIcon" width="100" height="100"/>
+        <image name="circle-black" width="64" height="64"/>
+        <image name="circle-blue" width="64" height="64"/>
+        <image name="circle-green" width="64" height="64"/>
+        <image name="circle-red" width="64" height="64"/>
+        <image name="circle-yellow" width="64" height="64"/>
         <image name="clearIcon" width="100" height="100"/>
         <image name="colorIcon" width="100" height="100"/>
         <image name="eraser-2" width="606" height="244"/>
         <image name="ic_file_download_48pt" width="48" height="48"/>
-        <image name="ic_lens_48pt" width="48" height="48"/>
     </resources>
 </document>
